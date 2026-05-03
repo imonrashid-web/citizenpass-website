@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Citizen Pass — U.S. Citizenship Test Prep</title>
-  <meta name="description" content="Your complete guide to passing the U.S. citizenship interview. Civics, Reading, Writing, N-400 prep & Mock Interview. $9.99 lifetime access.">
-  <meta name="keywords" content="citizenship test, USCIS, naturalization, civics test, citizenship interview, N-400, US citizenship prep">
+  <title>Citizen Pass — U.S. Citizenship Test Prep App</title>
+  <meta name="description" content="The most complete U.S. citizenship interview prep app. Civics, Reading, Writing, N-400 & Mock Interview. 7-day free trial. $9.99 lifetime access. No ads.">
+  <meta name="keywords" content="citizenship test, USCIS, naturalization, civics test, citizenship interview, N-400, US citizenship prep, mock interview, citizenship app">
   <meta property="og:title" content="Citizen Pass — U.S. Citizenship Test Prep">
-  <meta property="og:description" content="Pass your citizenship interview with confidence. All-in-one test prep for $9.99.">
+  <meta property="og:description" content="Pass your citizenship interview with confidence. The most complete prep app. 7-day free trial.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://citizenpass.us">
+  <link rel="icon" type="image/png" href="icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Serif+Display&display=swap" rel="stylesheet">
@@ -37,7 +38,6 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -98,15 +98,6 @@
       gap: 10px;
       text-decoration: none;
     }
-    .nav-logo-icon {
-      width: 36px; height: 36px;
-      background: var(--green);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-    }
     .nav-logo-text {
       font-family: var(--font-display);
       font-size: 20px;
@@ -152,12 +143,12 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: var(--white-08);
-      border: 1px solid var(--white-20);
+      background: var(--green-glow);
+      border: 1px solid rgba(72, 187, 120, 0.3);
       border-radius: 100px;
       padding: 8px 18px;
       font-size: 13px;
-      color: var(--gold);
+      color: var(--green);
       font-weight: 600;
       margin-bottom: 32px;
       animation: fadeUp 0.8s ease-out;
@@ -183,10 +174,24 @@
     .hero-sub {
       font-size: clamp(17px, 2.5vw, 21px);
       color: var(--white-70);
-      max-width: 560px;
+      max-width: 600px;
       line-height: 1.6;
-      margin-bottom: 40px;
+      margin-bottom: 16px;
       animation: fadeUp 0.8s ease-out 0.2s both;
+    }
+    .hero-trial {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold-glow);
+      border: 1px solid rgba(246, 199, 68, 0.25);
+      border-radius: 100px;
+      padding: 10px 22px;
+      font-size: 15px;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 36px;
+      animation: fadeUp 0.8s ease-out 0.25s both;
     }
     .hero-cta-row {
       display: flex;
@@ -196,42 +201,21 @@
       justify-content: center;
       animation: fadeUp 0.8s ease-out 0.3s both;
     }
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--green);
-      color: var(--navy);
-      font-weight: 700;
-      font-size: 16px;
-      padding: 16px 32px;
-      border-radius: 14px;
-      text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 20px rgba(72, 187, 120, 0.25);
+
+    /* Store badges */
+    .store-badge {
+      display: inline-block;
+      transition: transform 0.2s, opacity 0.2s;
     }
-    .btn-primary:hover {
+    .store-badge:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(72, 187, 120, 0.35);
+      opacity: 0.9;
     }
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--white-08);
-      border: 1px solid var(--white-20);
-      color: var(--white);
-      font-weight: 600;
-      font-size: 15px;
-      padding: 15px 28px;
-      border-radius: 14px;
-      text-decoration: none;
-      transition: background 0.2s, border-color 0.2s;
+    .store-badge img {
+      height: 52px;
+      width: auto;
     }
-    .btn-secondary:hover {
-      background: var(--white-08);
-      border-color: var(--white-50);
-    }
+
     .hero-note {
       margin-top: 20px;
       font-size: 13px;
@@ -270,10 +254,7 @@
       display: flex;
       flex-direction: column;
     }
-    .phone-screen-content {
-      flex: 1;
-      overflow: hidden;
-    }
+    .phone-screen-content { flex: 1; overflow: hidden; }
     .phone-tab-bar {
       display: flex;
       justify-content: space-around;
@@ -285,131 +266,226 @@
       padding-left: 18px;
       padding-right: 18px;
     }
-    .phone-tab {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2px;
-    }
-    .phone-tab-icon {
-      font-size: 16px;
-      line-height: 1;
-    }
-    .phone-tab-label {
-      font-size: 8px;
-      color: var(--white-50);
-      font-weight: 500;
-    }
-    .phone-tab.active .phone-tab-label {
-      color: var(--green);
-    }
-    .phone-card {
-      background: var(--navy-mid);
-      border-radius: 14px;
-      padding: 16px;
-      margin-bottom: 10px;
-    }
-    .phone-card-title {
-      font-size: 11px;
-      color: var(--white-70);
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
-    .phone-progress-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+    .phone-tab { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+    .phone-tab-icon { font-size: 16px; line-height: 1; }
+    .phone-tab-label { font-size: 8px; color: var(--white-50); font-weight: 500; }
+    .phone-tab.active .phone-tab-label { color: var(--green); }
+    .phone-card { background: var(--navy-mid); border-radius: 14px; padding: 16px; margin-bottom: 10px; }
+    .phone-card-title { font-size: 11px; color: var(--white-70); margin-bottom: 10px; font-weight: 600; }
+    .phone-progress-row { display: flex; align-items: center; gap: 10px; }
     .phone-circle {
-      width: 48px; height: 48px;
-      border-radius: 50%;
-      background: var(--white-20);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      font-weight: 700;
+      width: 48px; height: 48px; border-radius: 50%; background: var(--white-20);
+      display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700;
     }
-    .phone-stats {
-      font-size: 10px;
-      color: var(--white-70);
-      line-height: 1.8;
-    }
+    .phone-stats { font-size: 10px; color: var(--white-70); line-height: 1.8; }
     .phone-module {
-      background: var(--white-08);
-      border-radius: 10px;
-      padding: 12px;
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      border-left: 3px solid var(--blue);
+      background: var(--white-08); border-radius: 10px; padding: 12px; margin-bottom: 8px;
+      display: flex; align-items: center; gap: 10px; border-left: 3px solid var(--blue);
     }
     .phone-module:nth-child(2) { border-left-color: var(--green); }
     .phone-module:nth-child(3) { border-left-color: var(--gold); }
     .phone-module:nth-child(4) { border-left-color: #9F7AEA; }
     .phone-module-icon {
-      width: 28px; height: 28px;
-      border-radius: 8px;
-      background: var(--white-08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
+      width: 28px; height: 28px; border-radius: 8px; background: var(--white-08);
+      display: flex; align-items: center; justify-content: center; font-size: 14px;
     }
-    .phone-module-text {
-      font-size: 11px;
-      font-weight: 600;
-    }
-    .phone-module-sub {
-      font-size: 9px;
-      color: var(--white-50);
-      margin-top: 2px;
-    }
-    .phone-bar {
-      height: 4px;
-      background: var(--white-08);
-      border-radius: 2px;
-      margin-top: 6px;
-      overflow: hidden;
-    }
-    .phone-bar-fill {
-      height: 100%;
-      border-radius: 2px;
-      background: var(--blue);
-    }
+    .phone-module-text { font-size: 11px; font-weight: 600; }
+    .phone-module-sub { font-size: 9px; color: var(--white-50); margin-top: 2px; }
+    .phone-bar { height: 4px; background: var(--white-08); border-radius: 2px; margin-top: 6px; overflow: hidden; }
+    .phone-bar-fill { height: 100%; border-radius: 2px; }
 
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(24px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ========== FEATURES ========== */
-    .features {
+    /* ========== COMPETITIVE ADVANTAGE ========== */
+    .advantage {
+      padding: 80px 24px;
+    }
+    .advantage-banner {
+      max-width: 900px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, rgba(66,153,225,0.1) 0%, rgba(72,187,120,0.1) 100%);
+      border: 1px solid var(--white-20);
+      border-radius: 24px;
+      padding: 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .advantage-banner::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: -1px; right: -1px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--blue), var(--green), var(--gold));
+      border-radius: 24px 24px 0 0;
+    }
+    .advantage-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--gold-glow);
+      border: 1px solid rgba(246, 199, 68, 0.25);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 12px;
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .advantage-title {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 4vw, 36px);
+      margin-bottom: 16px;
+    }
+    .advantage-desc {
+      font-size: 17px;
+      color: var(--white-70);
+      line-height: 1.6;
+      max-width: 640px;
+      margin: 0 auto 28px;
+    }
+    .advantage-stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .advantage-stat {
+      text-align: center;
+    }
+    .advantage-stat-number {
+      font-family: var(--font-display);
+      font-size: 36px;
+      color: var(--green);
+    }
+    .advantage-stat-label {
+      font-size: 13px;
+      color: var(--white-50);
+      margin-top: 4px;
+    }
+
+    /* ========== SCREENSHOTS ========== */
+    .screenshots {
       padding: 120px 24px;
     }
-    .section-label {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--blue);
+    .screenshot-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 48px;
+    }
+    .screenshot-tab {
+      background: var(--white-08);
+      border: 1px solid var(--white-20);
+      border-radius: 100px;
+      padding: 12px 28px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white-70);
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .screenshot-tab:hover {
+      border-color: var(--white-50);
+      color: var(--white);
+    }
+    .screenshot-tab.active {
+      background: var(--green);
+      border-color: var(--green);
+      color: var(--navy);
+    }
+    .screenshot-tab svg {
+      width: 20px;
+      height: 20px;
+    }
+    .screenshot-gallery {
+      display: none;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 20px 0;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .screenshot-gallery.active {
+      display: flex;
+    }
+    .screenshot-gallery::-webkit-scrollbar {
+      height: 6px;
+    }
+    .screenshot-gallery::-webkit-scrollbar-track {
+      background: var(--white-04);
+      border-radius: 3px;
+    }
+    .screenshot-gallery::-webkit-scrollbar-thumb {
+      background: var(--white-20);
+      border-radius: 3px;
+    }
+    .screenshot-item {
+      flex: 0 0 auto;
+      scroll-snap-align: center;
+    }
+    .screenshot-item img {
+      width: 240px;
+      height: auto;
+      border-radius: 20px;
+      border: 2px solid var(--white-20);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .screenshot-item img:hover {
+      transform: translateY(-8px);
+      border-color: var(--white-50);
+    }
+    .screenshot-caption {
       text-align: center;
-      margin-bottom: 16px;
+      font-size: 12px;
+      color: var(--white-50);
+      margin-top: 12px;
+    }
+    .screenshot-placeholder {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 40px 0;
+    }
+    .screenshot-placeholder-item {
+      width: 240px;
+      height: 480px;
+      border-radius: 20px;
+      border: 2px dashed var(--white-20);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white-50);
+      font-size: 14px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* ========== FEATURES ========== */
+    .features { padding: 120px 24px; }
+    .section-label {
+      font-size: 13px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--blue); text-align: center; margin-bottom: 16px;
     }
     .section-title {
       font-family: var(--font-display);
       font-size: clamp(32px, 5vw, 48px);
-      text-align: center;
-      margin-bottom: 16px;
+      text-align: center; margin-bottom: 16px;
     }
     .section-desc {
-      text-align: center;
-      color: var(--white-70);
-      max-width: 520px;
-      margin: 0 auto 60px;
-      font-size: 17px;
-      line-height: 1.6;
+      text-align: center; color: var(--white-70); max-width: 520px;
+      margin: 0 auto 60px; font-size: 17px; line-height: 1.6;
     }
     .features-grid {
       display: grid;
@@ -417,24 +493,15 @@
       gap: 20px;
     }
     .feature-card {
-      background: var(--white-04);
-      border: 1px solid var(--white-08);
-      border-radius: 20px;
-      padding: 32px;
+      background: var(--white-04); border: 1px solid var(--white-08);
+      border-radius: 20px; padding: 32px;
       transition: border-color 0.3s, transform 0.3s;
     }
-    .feature-card:hover {
-      border-color: var(--white-20);
-      transform: translateY(-4px);
-    }
+    .feature-card:hover { border-color: var(--white-20); transform: translateY(-4px); }
     .feature-icon {
-      width: 52px; height: 52px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      margin-bottom: 20px;
+      width: 52px; height: 52px; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; margin-bottom: 20px;
     }
     .feature-card:nth-child(1) .feature-icon { background: rgba(66,153,225,0.15); }
     .feature-card:nth-child(2) .feature-icon { background: rgba(72,187,120,0.15); }
@@ -442,176 +509,189 @@
     .feature-card:nth-child(4) .feature-icon { background: rgba(159,122,234,0.15); }
     .feature-card:nth-child(5) .feature-icon { background: rgba(245,101,101,0.15); }
     .feature-card:nth-child(6) .feature-icon { background: rgba(246,199,68,0.15); }
-    .feature-title {
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-    .feature-desc {
-      font-size: 14px;
-      color: var(--white-70);
-      line-height: 1.6;
-    }
+    .feature-card:nth-child(7) .feature-icon { background: rgba(66,153,225,0.15); }
+    .feature-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .feature-desc { font-size: 14px; color: var(--white-70); line-height: 1.6; }
 
     /* ========== PRICING ========== */
-    .pricing {
-      padding: 120px 24px;
-    }
+    .pricing { padding: 120px 24px; }
     .pricing-card {
-      max-width: 480px;
-      margin: 0 auto;
+      max-width: 480px; margin: 0 auto;
       background: linear-gradient(135deg, var(--navy-light) 0%, var(--navy-mid) 100%);
-      border: 1px solid var(--white-20);
-      border-radius: 28px;
-      padding: 48px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+      border: 1px solid var(--white-20); border-radius: 28px;
+      padding: 48px; text-align: center; position: relative; overflow: hidden;
     }
     .pricing-card::before {
-      content: '';
-      position: absolute;
-      top: -1px; left: -1px; right: -1px;
-      height: 4px;
+      content: ''; position: absolute; top: -1px; left: -1px; right: -1px; height: 4px;
       background: linear-gradient(90deg, var(--blue), var(--green), var(--gold));
       border-radius: 28px 28px 0 0;
     }
     .pricing-plan {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--green);
-      margin-bottom: 8px;
+      font-size: 13px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--green); margin-bottom: 8px;
     }
-    .pricing-name {
-      font-family: var(--font-display);
-      font-size: 28px;
-      margin-bottom: 24px;
-    }
-    .pricing-price {
-      font-size: 56px;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
+    .pricing-name { font-family: var(--font-display); font-size: 28px; margin-bottom: 24px; }
+    .pricing-price { font-size: 56px; font-weight: 700; margin-bottom: 4px; }
     .pricing-price .currency { font-size: 28px; vertical-align: super; color: var(--white-70); }
-    .pricing-period {
-      font-size: 15px;
-      color: var(--white-50);
-      margin-bottom: 32px;
+    .pricing-period { font-size: 15px; color: var(--white-50); margin-bottom: 12px; }
+    .pricing-trial {
+      display: inline-block;
+      background: var(--gold-glow);
+      border: 1px solid rgba(246, 199, 68, 0.25);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 14px;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 28px;
     }
-    .pricing-features {
-      list-style: none;
-      text-align: left;
-      margin-bottom: 36px;
-    }
+    .pricing-features { list-style: none; text-align: left; margin-bottom: 36px; }
     .pricing-features li {
-      padding: 10px 0;
-      font-size: 15px;
-      color: var(--white-90);
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      padding: 10px 0; font-size: 15px; color: var(--white-90);
+      display: flex; align-items: center; gap: 12px;
       border-bottom: 1px solid var(--white-08);
     }
     .pricing-features li:last-child { border-bottom: none; }
     .pricing-check {
-      width: 22px; height: 22px;
-      background: var(--green-glow);
-      border-radius: 50%;
+      width: 22px; height: 22px; background: var(--green-glow); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--green); font-size: 13px; flex-shrink: 0;
+    }
+    .pricing-store-buttons {
       display: flex;
-      align-items: center;
+      gap: 12px;
       justify-content: center;
-      color: var(--green);
-      font-size: 13px;
-      flex-shrink: 0;
+      flex-wrap: wrap;
     }
-    .pricing-card .btn-primary {
-      width: 100%;
-      justify-content: center;
-      font-size: 17px;
-      padding: 18px;
+    .pricing-store-buttons .store-badge img {
+      height: 48px;
     }
-    .pricing-note {
-      margin-top: 16px;
-      font-size: 13px;
-      color: var(--white-50);
-    }
+    .pricing-note { margin-top: 16px; font-size: 13px; color: var(--white-50); }
 
-    /* ========== TRUST ========== */
-    .trust {
+    /* ========== VIDEO ========== */
+    .videos {
       padding: 80px 24px 120px;
     }
-    .trust-grid {
+    .video-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 24px;
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
     }
-    .trust-item {
-      text-align: center;
-      padding: 28px 20px;
+    .video-card {
       background: var(--white-04);
       border: 1px solid var(--white-08);
       border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      transition: border-color 0.3s;
     }
-    .trust-icon {
-      font-size: 32px;
-      margin-bottom: 12px;
+    .video-card:hover { border-color: var(--white-20); }
+    .video-icon { font-size: 40px; margin-bottom: 12px; }
+    .video-title { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+    .video-desc { font-size: 13px; color: var(--white-50); line-height: 1.5; }
+    .video-link {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s;
     }
-    .trust-title {
-      font-size: 15px;
-      font-weight: 700;
-      margin-bottom: 4px;
+    .video-link:hover { color: var(--white); }
+
+    /* ========== TRUST ========== */
+    .trust { padding: 80px 24px 120px; }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px; max-width: 800px; margin: 0 auto;
     }
-    .trust-desc {
-      font-size: 13px;
+    .trust-item {
+      text-align: center; padding: 28px 20px;
+      background: var(--white-04); border: 1px solid var(--white-08); border-radius: 16px;
+    }
+    .trust-icon { font-size: 32px; margin-bottom: 12px; }
+    .trust-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .trust-desc { font-size: 13px; color: var(--white-50); }
+
+    /* ========== DISCLAIMER ========== */
+    .disclaimer {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+      text-align: center;
+    }
+    .disclaimer p {
+      font-size: 12px;
       color: var(--white-50);
+      line-height: 1.7;
+      background: var(--white-04);
+      border: 1px solid var(--white-08);
+      border-radius: 12px;
+      padding: 20px 28px;
     }
 
     /* ========== FOOTER ========== */
     footer {
-      position: relative;
-      z-index: 1;
+      position: relative; z-index: 1;
       border-top: 1px solid var(--white-08);
       padding: 40px 24px;
     }
     .footer-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 20px;
     }
-    .footer-left {
-      font-size: 13px;
-      color: var(--white-50);
-    }
-    .footer-links {
-      display: flex;
-      gap: 24px;
-      list-style: none;
-    }
+    .footer-left { font-size: 13px; color: var(--white-50); }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
     .footer-links a {
-      font-size: 13px;
-      color: var(--white-50);
-      text-decoration: none;
-      transition: color 0.2s;
+      font-size: 13px; color: var(--white-50); text-decoration: none; transition: color 0.2s;
     }
     .footer-links a:hover { color: var(--white); }
+    .footer-social {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .footer-social a {
+      color: var(--white-50);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+    .footer-social a:hover { color: var(--white); }
+    .footer-counter {
+      width: 100%;
+      text-align: center;
+      margin-top: 16px;
+      font-size: 12px;
+      color: var(--white-50);
+    }
+    .footer-counter span {
+      color: var(--green);
+      font-weight: 600;
+    }
 
     /* ========== RESPONSIVE ========== */
     @media (max-width: 768px) {
       nav { padding: 16px 20px; }
       .nav-links { display: none; }
       .hero { padding-top: 120px; }
+      .hero-trial { font-size: 13px; padding: 8px 16px; }
       .features-grid { grid-template-columns: 1fr; }
       .pricing-card { padding: 32px 24px; }
+      .screenshot-item img { width: 200px; }
+      .advantage-stats { gap: 24px; }
+      .advantage-banner { padding: 32px 24px; }
       .footer-inner { flex-direction: column; text-align: center; }
       .footer-links { justify-content: center; }
+      .footer-social { justify-content: center; }
+      .video-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -627,6 +707,7 @@
     </a>
     <ul class="nav-links">
       <li><a href="#features">Features</a></li>
+      <li><a href="#screenshots">Screenshots</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -636,23 +717,26 @@
   <section class="hero">
     <div class="hero-badge">
       <span class="hero-badge-dot"></span>
-      Coming soon to iOS & Android
+      Available on iOS &amp; Android
     </div>
     <h1>Pass your citizenship<br>interview with <span class="accent">confidence</span></h1>
     <p class="hero-sub">
-      The all-in-one study app for the U.S. naturalization test. 
-      Civics, reading, writing, N-400 prep, and a full mock interview — 
-      everything you need in one place.
+      The most complete study app for the U.S. naturalization test.
+      Civics, reading, writing, N-400 prep, and a full mock interview —
+      more features than any other citizenship interview app.
     </p>
+    <div class="hero-trial">⭐ 7-Day Free Trial — Full Access, No Credit Card Required</div>
     <div class="hero-cta-row">
-      <a href="#pricing" class="btn-primary">
-        <span>✦</span> Get Lifetime Access — $9.99
+      <!-- App Store Badge -->
+      <a href="https://apps.apple.com/us/app/citizen-pass-citizenship-prep/id6760327120" class="store-badge" target="_blank" rel="noopener">
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
       </a>
-      <a href="#features" class="btn-secondary">
-        See Features ↓
+      <!-- Google Play Badge -->
+      <a href="https://play.google.com/store/apps/details?id=com.passmyinterview.app" class="store-badge" target="_blank" rel="noopener">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
       </a>
     </div>
-    <p class="hero-note">7-day free trial. No credit card required. No ads.</p>
+    <p class="hero-note">$9.99 one-time purchase after trial. No subscriptions. No ads.</p>
 
     <!-- Phone mockup -->
     <div class="hero-phone">
@@ -705,7 +789,6 @@
             </div>
           </div>
           </div>
-          <!-- Tab Bar -->
           <div class="phone-tab-bar">
             <div class="phone-tab active">
               <span class="phone-tab-icon">🏠</span>
@@ -733,44 +816,163 @@
     </div>
   </section>
 
+  <!-- COMPETITIVE ADVANTAGE -->
+  <section class="advantage">
+    <div class="advantage-banner">
+      <div class="advantage-badge">⭐ Why Citizen Pass?</div>
+      <h2 class="advantage-title">More features than any other citizenship prep app</h2>
+      <p class="advantage-desc">
+        While other apps only cover civics flashcards, Citizen Pass prepares you for 
+        every part of the USCIS interview — civics, reading, writing, N-400, and a full mock interview.
+      </p>
+      <div class="advantage-stats">
+        <div class="advantage-stat">
+          <div class="advantage-stat-number">228</div>
+          <div class="advantage-stat-label">Civics Questions<br>(2008 + 2025)</div>
+        </div>
+        <div class="advantage-stat">
+          <div class="advantage-stat-number">100</div>
+          <div class="advantage-stat-label">Reading &amp; Writing<br>Sentences</div>
+        </div>
+        <div class="advantage-stat">
+          <div class="advantage-stat-number">5</div>
+          <div class="advantage-stat-label">Study Modules<br>+ Mock Interview</div>
+        </div>
+        <div class="advantage-stat">
+          <div class="advantage-stat-number">2</div>
+          <div class="advantage-stat-label">Languages<br>English &amp; Spanish</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCREENSHOTS -->
+  <section class="screenshots" id="screenshots">
+    <p class="section-label">See It In Action</p>
+    <h2 class="section-title">App Screenshots</h2>
+    <p class="section-desc">
+      Explore every feature of Citizen Pass. Available on iPhone and Android.
+    </p>
+
+    <div class="screenshot-tabs">
+      <button class="screenshot-tab active" onclick="switchScreenshots('iphone')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="1" width="14" height="22" rx="3"/><line x1="12" y1="18" x2="12" y2="18.01" stroke-width="3" stroke-linecap="round"/></svg>
+        iPhone
+      </button>
+      <button class="screenshot-tab" onclick="switchScreenshots('android')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="8" y1="19" x2="16" y2="19" stroke-linecap="round"/></svg>
+        Android
+      </button>
+    </div>
+
+    <!-- iPhone Screenshots -->
+    <div class="screenshot-gallery active" id="iphone-screenshots">
+      <!--
+        ============================================================
+        TO ADD iPHONE SCREENSHOTS:
+        1. Add your screenshot images to the website repo
+        2. Name them: iphone-1.png, iphone-2.png, etc.
+        3. Uncomment the img tags below and update the src paths
+        ============================================================
+      -->
+      <div class="screenshot-item">
+        <img src="screenshots/iphone-1.png" alt="Home Screen" onerror="this.parentElement.innerHTML='<div class=screenshot-placeholder-item>iPhone Screenshot 1<br>Home Screen</div>'">
+        <p class="screenshot-caption">Home Screen</p>
+      </div>
+      <div class="screenshot-item">
+        <img src="screenshots/iphone-2.png" alt="Civics Test" onerror="this.parentElement.innerHTML='<div class=screenshot-placeholder-item>iPhone Screenshot 2<br>Civics Test</div>'">
+        <p class="screenshot-caption">Civics Test</p>
+      </div>
+      <div class="screenshot-item">
+        <img src="screenshots/iphone-3.png" alt="Reading Practice" onerror="this.parentElement.innerHTML='<div class=screenshot-placeholder-item>iPhone Screenshot 3<br>Reading Practice</div>'">
+        <p class="screenshot-caption">Reading Practice</p>
+      </div>
+      <div class="screenshot-item">
+        <img src="screenshots/iphone-4.png" alt="Writing Practice" onerror="this.parentElement.innerHTML='<div class=screenshot-placeholder-item>iPhone Screenshot 4<br>Writing Practice</div>'">
+        <p class="screenshot-caption">Writing Practice</p>
+      </div>
+      <div class="screenshot-item">
+        <img src="screenshots/iphone-5.png" alt="N-400 Practice" onerror="this.parentElement.innerHTML='<div class=screenshot-placeholder-item>iPhone Screenshot 5<br>N-400 Practice</div>'">
+        <p class="screenshot-caption">N-400 Practice</p>
+      </div>
+      <div class="screenshot-item">
+        <img src="screenshots/iphone-6.png" alt="Mock Interview" onerror="this.parentElement.innerHTML='<div class=screenshot-placeholder-item>iPhone Screenshot 6<br>Mock Interview</div>'">
+        <p class="screenshot-caption">Mock Interview</p>
+      </div>
+    </div>
+
+    <!-- Android Screenshots -->
+    <div class="screenshot-gallery" id="android-screenshots">
+      <div class="screenshot-item">
+        <img src="screenshots/android-1.png" alt="Home Screen" onerror="this.parentElement.innerHTML='<div class=screenshot-placeholder-item>Android Screenshot 1<br>Home Screen</div>'">
+        <p class="screenshot-caption">Home Screen</p>
+      </div>
+      <div class="screenshot-item">
+        <img src="screenshots/android-2.png" alt="Civics Test" onerror="this.parentElement.innerHTML='<div class=screenshot-placeholder-item>Android Screenshot 2<br>Civics Test</div>'">
+        <p class="screenshot-caption">Civics Test</p>
+      </div>
+      <div class="screenshot-item">
+        <img src="screenshots/android-3.png" alt="Reading Practice" onerror="this.parentElement.innerHTML='<div class=screenshot-placeholder-item>Android Screenshot 3<br>Reading Practice</div>'">
+        <p class="screenshot-caption">Reading Practice</p>
+      </div>
+      <div class="screenshot-item">
+        <img src="screenshots/android-4.png" alt="Writing Practice" onerror="this.parentElement.innerHTML='<div class=screenshot-placeholder-item>Android Screenshot 4<br>Writing Practice</div>'">
+        <p class="screenshot-caption">Writing Practice</p>
+      </div>
+      <div class="screenshot-item">
+        <img src="screenshots/android-5.png" alt="N-400 Practice" onerror="this.parentElement.innerHTML='<div class=screenshot-placeholder-item>Android Screenshot 5<br>N-400 Practice</div>'">
+        <p class="screenshot-caption">N-400 Practice</p>
+      </div>
+      <div class="screenshot-item">
+        <img src="screenshots/android-6.png" alt="Mock Interview" onerror="this.parentElement.innerHTML='<div class=screenshot-placeholder-item>Android Screenshot 6<br>Mock Interview</div>'">
+        <p class="screenshot-caption">Mock Interview</p>
+      </div>
+    </div>
+  </section>
+
   <!-- FEATURES -->
   <section class="features" id="features">
     <p class="section-label">Everything You Need</p>
     <h2 class="section-title">Six modules. One goal.</h2>
     <p class="section-desc">
-      Designed specifically for the USCIS naturalization interview. 
+      Designed specifically for the USCIS naturalization interview.
       Study at your own pace with questions that match the real test.
     </p>
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-icon">📚</div>
-        <h3 class="feature-title">128 Civics Questions</h3>
-        <p class="feature-desc">All official USCIS civics questions with flashcards, practice tests, and progress tracking. Includes the 2008 and 2020 test versions.</p>
+        <h3 class="feature-title">228 Civics Questions</h3>
+        <p class="feature-desc">All official USCIS civics questions with flashcards, practice tests, and progress tracking. Includes the 2008 (100 questions) and 2025 (128 questions) test versions.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📖</div>
         <h3 class="feature-title">Reading Practice</h3>
-        <p class="feature-desc">50 reading sentences from the official USCIS vocabulary list. Practice recognizing key civics and everyday vocabulary words.</p>
+        <p class="feature-desc">50 reading sentences from the official USCIS vocabulary list. Practice recognizing key civics and everyday vocabulary words. Audio pronunciation included.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">✏️</div>
         <h3 class="feature-title">Writing Practice</h3>
-        <p class="feature-desc">50 writing sentences to practice spelling and grammar. Master the words and sentence patterns used in the writing portion.</p>
+        <p class="feature-desc">50 writing sentences to practice spelling and grammar. Master the words and sentence patterns used in the writing portion of the interview.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📋</div>
         <h3 class="feature-title">N-400 Preparation</h3>
-        <p class="feature-desc">Review the questions the officer will ask about your N-400 application. Practice answering clearly and confidently.</p>
+        <p class="feature-desc">Review the questions the officer will ask about your N-400 application. Practice answering clearly and confidently in a realistic format.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🎤</div>
         <h3 class="feature-title">Mock Interview</h3>
-        <p class="feature-desc">Simulate the full citizenship interview experience. Covers all sections in the order you will encounter them at USCIS.</p>
+        <p class="feature-desc">Simulate the full citizenship interview experience. Covers all sections in the order you will encounter them at USCIS. Get scored and review every answer.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📍</div>
         <h3 class="feature-title">State-Specific Answers</h3>
-        <p class="feature-desc">Enter your ZIP code and get the correct governor, senators, and representative for your location. Always up to date.</p>
+        <p class="feature-desc">Enter your ZIP code and get the correct governor, senators, and representative for your location. The real answers you need for your interview.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌙</div>
+        <h3 class="feature-title">Dark Mode &amp; Offline</h3>
+        <p class="feature-desc">Study comfortably day or night with full dark mode support. Works completely offline — no internet connection required.</p>
       </div>
     </div>
   </section>
@@ -787,20 +989,59 @@
       <h3 class="pricing-name">Citizen Pass</h3>
       <p class="pricing-price"><span class="currency">$</span>9<span style="font-size: 36px;">.99</span></p>
       <p class="pricing-period">One-time purchase. Not a subscription.</p>
+      <div class="pricing-trial">⭐ 7-Day Free Trial Included</div>
       <ul class="pricing-features">
-        <li><span class="pricing-check">✓</span> All 128 civics questions & flashcards</li>
-        <li><span class="pricing-check">✓</span> Reading & writing practice tests</li>
+        <li><span class="pricing-check">✓</span> All 228 civics questions (2008 &amp; 2025)</li>
+        <li><span class="pricing-check">✓</span> Reading &amp; writing practice tests</li>
         <li><span class="pricing-check">✓</span> N-400 interview preparation</li>
         <li><span class="pricing-check">✓</span> Full mock interview simulation</li>
         <li><span class="pricing-check">✓</span> State-specific answers</li>
-        <li><span class="pricing-check">✓</span> English & Spanish support</li>
-        <li><span class="pricing-check">✓</span> No ads, ever</li>
+        <li><span class="pricing-check">✓</span> English &amp; Spanish support</li>
+        <li><span class="pricing-check">✓</span> Completely ad-free</li>
+        <li><span class="pricing-check">✓</span> Dark mode &amp; offline access</li>
         <li><span class="pricing-check">✓</span> Free updates for life</li>
       </ul>
-      <a href="#" class="btn-primary" onclick="return false;">
-        Coming Soon — Join the Waitlist
-      </a>
+      <div class="pricing-store-buttons">
+        <a href="https://apps.apple.com/us/app/citizen-pass-citizenship-prep/id6760327120" class="store-badge" target="_blank" rel="noopener">
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.passmyinterview.app" class="store-badge" target="_blank" rel="noopener">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
+        </a>
+      </div>
       <p class="pricing-note">7-day free trial included. No credit card required.</p>
+    </div>
+  </section>
+
+  <!-- TUTORIAL VIDEOS (placeholder for YouTube links) -->
+  <section class="videos" id="videos">
+    <p class="section-label">Learn How To Use It</p>
+    <h2 class="section-title">Tutorial Videos</h2>
+    <p class="section-desc">
+      Watch step-by-step guides to get the most out of Citizen Pass.
+    </p>
+    <div class="video-grid">
+      <div class="video-card">
+        <div class="video-icon">🎬</div>
+        <h4 class="video-title">Getting Started</h4>
+        <p class="video-desc">Complete app walkthrough — download, set up your state, and start studying.</p>
+        <!-- Uncomment and add YouTube link when ready:
+        <a href="https://youtube.com/watch?v=YOUR_VIDEO_ID" class="video-link" target="_blank">Watch on YouTube →</a>
+        -->
+        <span class="video-link" style="opacity:0.5;">Coming Soon</span>
+      </div>
+      <div class="video-card">
+        <div class="video-icon">📚</div>
+        <h4 class="video-title">Civics Study Guide</h4>
+        <p class="video-desc">How to use flashcards, practice tests, and track your civics progress.</p>
+        <span class="video-link" style="opacity:0.5;">Coming Soon</span>
+      </div>
+      <div class="video-card">
+        <div class="video-icon">🎤</div>
+        <h4 class="video-title">Mock Interview Guide</h4>
+        <p class="video-desc">How to set up and take the full mock interview — MC and text entry modes explained.</p>
+        <span class="video-link" style="opacity:0.5;">Coming Soon</span>
+      </div>
     </div>
   </section>
 
@@ -820,10 +1061,19 @@
       <div class="trust-item">
         <div class="trust-icon">🚫</div>
         <h4 class="trust-title">Zero Ads</h4>
-        <p class="trust-desc">No distractions. Just focused learning.</p>
+        <p class="trust-desc">No ads in the free trial or after purchase. Ever.</p>
       </div>
     </div>
   </section>
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    <p>
+      Citizen Pass is an independent educational app. It is not produced, endorsed, or affiliated with
+      U.S. Citizenship and Immigration Services (USCIS) or any government agency.
+      Content is based on publicly available USCIS study materials.
+    </p>
+  </div>
 
   <!-- FOOTER -->
   <footer id="contact">
@@ -831,8 +1081,71 @@
       <div class="footer-left">
         © 2026 Shireen Testing LLC · Wellington, FL
       </div>
+      <div class="footer-social">
+        <!-- Uncomment and add links as social accounts are created:
+        <a href="https://youtube.com/@citizenpass" target="_blank">YouTube</a>
+        <a href="https://facebook.com/citizenpass" target="_blank">Facebook</a>
+        <a href="https://tiktok.com/@citizenpass" target="_blank">TikTok</a>
+        -->
+      </div>
       <ul class="footer-links">
-        <li><a href="/privacy">Privacy Policy</a></li>
-        <li><a href="/terms">Terms of Service</a></li>
-        <li><a href="/cdn-cgi/l/email-protection#deb7b3b1b09ebdb7aab7a4bbb0aebfadadf0abad">Contact</a></li>
-      </ul
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="mailto:support@citizenpass.us">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-counter">
+      <!-- 
+        VISITOR COUNTER SETUP:
+        1. Go to https://www.goatcounter.com and sign up (free)
+        2. Choose a site code like "citizenpass"
+        3. Replace YOUR_SITE_CODE below with your actual code
+        4. The counter will show total page views
+      -->
+      <noscript>
+        <img src="https://YOUR_SITE_CODE.goatcounter.com/count?p=/&t=Citizen+Pass" alt="">
+      </noscript>
+      Page views: <span id="visitor-count">—</span>
+    </div>
+  </footer>
+
+  <!-- Screenshot Tab Switching -->
+  <script>
+    function switchScreenshots(platform) {
+      // Update tabs
+      document.querySelectorAll('.screenshot-tab').forEach(tab => tab.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+
+      // Update galleries
+      document.querySelectorAll('.screenshot-gallery').forEach(g => g.classList.remove('active'));
+      document.getElementById(platform + '-screenshots').classList.add('active');
+    }
+  </script>
+
+  <!--
+    GOATCOUNTER ANALYTICS:
+    1. Sign up at https://www.goatcounter.com (free, no credit card)
+    2. Replace YOUR_SITE_CODE below with your code (e.g., "citizenpass")
+    3. Dashboard will be at https://YOUR_SITE_CODE.goatcounter.com
+  -->
+  <!-- <script data-goatcounter="https://YOUR_SITE_CODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script> -->
+
+  <!--
+    VISITOR COUNTER DISPLAY:
+    Once Goatcounter is set up, uncomment and update this script:
+  -->
+  <!--
+  <script>
+    fetch('https://YOUR_SITE_CODE.goatcounter.com/counter//.json')
+      .then(r => r.json())
+      .then(data => {
+        document.getElementById('visitor-count').textContent = data.count.toLocaleString();
+      })
+      .catch(() => {
+        document.getElementById('visitor-count').textContent = '—';
+      });
+  </script>
+  -->
+
+</body>
+</html>
