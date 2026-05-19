@@ -9,7 +9,7 @@ google_analytics: G-T64Z2T7ERC
 
 # Build settings
 markdown: kramdown
-permalink: pretty
+
 
 # Files to exclude from the build
 exclude:
