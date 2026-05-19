@@ -1,0 +1,19 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title | default: site.title }}</title>
+{% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+{% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
+{% if page.og_title %}<meta property="og:title" content="{{ page.og_title }}">{% endif %}
+{% if page.og_description %}<meta property="og:description" content="{{ page.og_description }}">{% endif %}
+{% if page.og_url %}<meta property="og:url" content="{{ page.og_url }}">
+<meta property="og:type" content="website">{% endif %}
+<link rel="icon" type="image/png" href="{{ '/icon.png' | relative_url }}">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ site.google_analytics }}');
+</script>

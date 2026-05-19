@@ -1,0 +1,30 @@
+# Site settings
+title: Citizen Pass
+description: U.S. Citizenship Test Prep — Civics, Reading, Writing, N-400 & Mock Interview
+url: https://citizenpass.us
+email: support@citizenpass.us
+
+# Analytics
+google_analytics: G-T64Z2T7ERC
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Files to exclude from the build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - index1.html
+  - .gitignore
+  - vendor
+  - .bundle
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
