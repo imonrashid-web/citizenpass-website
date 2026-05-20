@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Manager — Citizen Pass</title>
+  <link rel="icon" type="image/png" href="/icon.png">
+  <!-- Decap CMS -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <style>
+    /* Customize login button text */
+    [data-testid="github-auth-button"] span,
+    .nc-githubAuthenticationPage-button span {
+      visibility: hidden;
+      position: relative;
+    }
+    [data-testid="github-auth-button"] span::after,
+    .nc-githubAuthenticationPage-button span::after {
+      content: "Admin Access";
+      visibility: visible;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // Optional: customize login button text after CMS loads
+    window.CMS_MANUAL_INIT = false;
+  </script>
+</body>
+</html>

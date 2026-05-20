@@ -1,0 +1,52 @@
+# Decap CMS Configuration for Citizen Pass Blog
+
+backend:
+  name: github
+  repo: imonrashid-web/citizenpass-website
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+# Where uploaded images go
+media_folder: "assets/blog-images"
+public_folder: "/assets/blog-images"
+
+# Site URL for preview links
+site_url: https://citizenpass.us
+display_url: https://citizenpass.us
+logo_url: https://citizenpass.us/icon.png
+
+# Editor preview settings
+publish_mode: simple
+
+# Collections — what content types can be edited
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    label_singular: "Blog Post"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "blog/{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      - { label: "Title", name: "title", widget: "string", hint: "Keep under 60 characters for SEO" }
+      - { label: "Publish Date", name: "date", widget: "datetime", default: "", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Announcement", value: "announcement" }
+          - { label: "Civics Guide", value: "civics" }
+          - { label: "Reading Test", value: "reading" }
+          - { label: "Writing Test", value: "writing" }
+          - { label: "N-400 Application", value: "n400" }
+          - { label: "Interview Tips", value: "interview" }
+          - { label: "USCIS Updates", value: "uscis-updates" }
+          - { label: "Success Stories", value: "success-stories" }
+        default: "announcement"
+      - { label: "Excerpt", name: "excerpt", widget: "text", hint: "One-line summary shown on the blog index page (1-2 sentences)" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false, hint: "Optional. Upload an image for the post header" }
+      - { label: "Body", name: "body", widget: "markdown" }
