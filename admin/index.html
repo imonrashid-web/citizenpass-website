@@ -5,29 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog Manager — Citizen Pass</title>
   <link rel="icon" type="image/png" href="/icon.png">
-  <!-- Decap CMS -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-  <style>
-    /* Customize login button text */
-    [data-testid="github-auth-button"] span,
-    .nc-githubAuthenticationPage-button span {
-      visibility: hidden;
-      position: relative;
-    }
-    [data-testid="github-auth-button"] span::after,
-    .nc-githubAuthenticationPage-button span::after {
-      content: "Admin Access";
-      visibility: visible;
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
-  </style>
 </head>
 <body>
+  <!-- Decap CMS — must be in body, not head -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+  <!-- Customize login button text from "Login with GitHub" to "Admin Access" -->
   <script>
-    // Optional: customize login button text after CMS loads
-    window.CMS_MANUAL_INIT = false;
+    const observer = new MutationObserver(() => {
+      document.querySelectorAll('button').forEach(btn => {
+        if (btn.textContent.trim() === 'Login with GitHub') {
+          btn.textContent = 'Admin Access';
+        }
+      });
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
   </script>
 </body>
 </html>
