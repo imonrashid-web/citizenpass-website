@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Preparing for Your U.S. Citizenship Interview Just Got Easier
+title: Preparing for Your U.S. Citizenship Interview
 date: 2026-05-23
 category: announcement
 excerpt: The naturalization interview can feel overwhelming — the civics
