@@ -19,6 +19,14 @@ logo_url: https://citizenpass.us/icon.png
 # Editor preview settings
 publish_mode: simple
 
+# SAFETY NET: force every generated file name to plain ASCII, so a
+# Bengali (or other non-English) title can never create an over-long
+# file name and break the build again.
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+
 # Collections — what content types can be edited
 collections:
   - name: "blog"
@@ -26,13 +34,16 @@ collections:
     label_singular: "Blog Post"
     folder: "_posts"
     create: true
+    identifier_field: "url_slug"
+    summary: "{{title}}"
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     preview_path: "blog/{{slug}}"
     editor:
       preview: false
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
-      - { label: "Title", name: "title", widget: "string", hint: "Keep under 60 characters for SEO" }
+      - { label: "Title", name: "title", widget: "string", hint: "The headline shown on the blog. Bengali or Spanish is fine here." }
+      - { label: "URL Slug (this becomes the file name)", name: "url_slug", widget: "string", hint: "SHORT English words ONLY — lowercase, hyphens, no spaces, no Bengali. Example: civics-test-is-oral" }
       - { label: "Publish Date", name: "date", widget: "datetime", default: "", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
       - label: "Category"
         name: "category"
