@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Prepararte para tu Entrevista de Ciudadanía Ahora Es Más Fácil
+url_slug: Prepararte para tu Entrevista
 date: 2026-05-23
 category: announcement
 excerpt: La entrevista de naturalización puede sentirse abrumadora — las
