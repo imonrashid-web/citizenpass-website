@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Citizen Pass: App Introduction — Your Complete Guide to U.S. Citizenship Test Prep"
+title: "YouTube: Citizen Pass: App Introduction — Your Complete Guide to U.S. Citizenship Test Prep"
 date: 2026-05-24
 category: announcement
 excerpt: "Watch our complete app walkthrough and see how Citizen Pass helps you prepare for every part of the U.S. naturalization interview — civics, reading, writing, N-400, and mock interview."
