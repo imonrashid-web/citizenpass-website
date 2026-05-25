@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Study smarterS: practice out loud, not in your head"
+title: "Study smarter: practice out loud, not in your head"
 url_slug: Study smarter
 date: 2026-05-24
 category: civics
