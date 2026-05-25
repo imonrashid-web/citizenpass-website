@@ -20,6 +20,18 @@ image: ""
 # How to Ace Your U.S. Citizenship Interview Using Citizen Pass Mock Interviews
 
 [Citizen Pass: Citizenship Test Mock Interview Part 1 (Multiple Choice) - YouTube](https://www.youtube.com/watch?v=qL9QukfdT3k)
+<div style="margin: 24px 0; border-radius: 12px; overflow: hidden; max-width: 800px;">
+  <div style="position: relative; padding-bottom: 56.25%; height: 0;">
+    <iframe 
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+      src="https://www.youtube.com/embed/qL9QukfdT3k" 
+      title="Citizen Pass App Introduction" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
 
 Preparing for your U.S. citizenship interview can feel overwhelming. Between memorizing civics facts, practicing your English reading and writing, and reviewing every single detail on your N-400 application, there is a lot of ground to cover.
 
