@@ -3,7 +3,7 @@ layout: post
 title: The N-400 interview isn’t an interrogation. It’s a conversation with a purpose.
 url_slug: The N-400 interview isn’t an interrogation
 date: 2026-05-30
-category: announcement
+category: n400
 excerpt: >
   The N-400 Interview — What Really Happens in the Room
 
