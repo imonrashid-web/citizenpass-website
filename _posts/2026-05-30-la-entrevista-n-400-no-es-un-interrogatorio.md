@@ -4,8 +4,8 @@ title: La entrevista N-400 no es un interrogatorio. Es una conversación con un
   propósito.
 url_slug: La entrevista N-400 no es un interrogatorio
 date: 2026-05-30
-category: announcement
-excerpt: >+
+category: n400
+excerpt: >
   La entrevista N-400 no es un interrogatorio. Es una conversación con un
   propósito.
 
