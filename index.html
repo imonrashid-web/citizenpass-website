@@ -120,6 +120,98 @@ og_url: "https://citizenpass.us"
     }
     .nav-links a:hover { color: var(--white); }
 
+    /* ========== HAMBURGER BUTTON ========== */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      background: var(--white-08);
+      border: 1px solid var(--white-20);
+      border-radius: 10px;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.2s, border-color 0.2s;
+      z-index: 101;
+    }
+    .nav-hamburger:hover {
+      background: var(--white-20);
+      border-color: var(--white-50);
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    /* Hamburger → X animation */
+    .nav-hamburger.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .nav-hamburger.open span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    .nav-hamburger.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* ========== MOBILE DRAWER ========== */
+    .nav-mobile-drawer {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 99;
+      background: rgba(15, 27, 45, 0.97);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--white-20);
+      padding-top: 80px;
+      padding-bottom: 24px;
+      transform: translateY(-100%);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .nav-mobile-drawer.open {
+      transform: translateY(0);
+    }
+    .nav-mobile-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      padding: 8px 0;
+    }
+    .nav-mobile-links li a {
+      display: flex;
+      align-items: center;
+      padding: 16px 28px;
+      color: var(--white-70);
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 500;
+      border-bottom: 1px solid var(--white-08);
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-mobile-links li:last-child a {
+      border-bottom: none;
+    }
+    .nav-mobile-links li a:hover,
+    .nav-mobile-links li a:active {
+      color: var(--white);
+      background: var(--white-04);
+    }
+    /* Blog link gets a highlight so it stands out */
+    .nav-mobile-links li a.blog-link {
+      color: var(--green);
+    }
+    .nav-mobile-links li a.blog-link:hover {
+      color: var(--white);
+    }
+
     /* ========== SECTIONS ========== */
     section {
       position: relative;
@@ -681,7 +773,10 @@ og_url: "https://citizenpass.us"
     /* ========== RESPONSIVE ========== */
     @media (max-width: 768px) {
       nav { padding: 16px 20px; }
+      /* CHANGED: was display:none — now handled by hamburger drawer */
       .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav-mobile-drawer { display: block; }
       .hero { padding-top: 120px; }
       .hero-trial { font-size: 13px; padding: 8px 16px; }
       .features-grid { grid-template-columns: 1fr; }
@@ -700,12 +795,24 @@ og_url: "https://citizenpass.us"
 
   <div class="bg-glow"></div>
 
+  <!-- MOBILE DRAWER (sits behind nav bar, slides down on open) -->
+  <div class="nav-mobile-drawer" id="mobileDrawer">
+    <ul class="nav-mobile-links">
+      <li><a href="#features" onclick="closeDrawer()">Features</a></li>
+      <li><a href="#screenshots" onclick="closeDrawer()">Screenshots</a></li>
+      <li><a href="#pricing" onclick="closeDrawer()">Pricing</a></li>
+      <li><a href="{{ '/blog/' | relative_url }}" class="blog-link">📝 Blog</a></li>
+      <li><a href="#contact" onclick="closeDrawer()">Contact</a></li>
+    </ul>
+  </div>
+
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">
       <img src="icon.png" alt="Citizen Pass" style="width:36px;height:36px;border-radius:10px;">
       <span class="nav-logo-text">Citizen Pass</span>
     </a>
+    <!-- Desktop nav links -->
     <ul class="nav-links">
       <li><a href="#features">Features</a></li>
       <li><a href="#screenshots">Screenshots</a></li>
@@ -713,6 +820,12 @@ og_url: "https://citizenpass.us"
       <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <!-- Mobile hamburger button -->
+    <button class="nav-hamburger" id="hamburgerBtn" aria-label="Open menu" onclick="toggleDrawer()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 
   <!-- HERO -->
@@ -729,11 +842,9 @@ og_url: "https://citizenpass.us"
     </p>
     <div class="hero-trial">⭐ 7-Day Free Trial — Full Access, No Credit Card Required</div>
     <div class="hero-cta-row">
-      <!-- App Store Badge -->
       <a href="https://apps.apple.com/us/app/citizen-pass-citizenship-prep/id6760327120" class="store-badge" target="_blank" rel="noopener">
         <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
       </a>
-      <!-- Google Play Badge -->
       <a href="https://play.google.com/store/apps/details?id=com.passmyinterview.app" class="store-badge" target="_blank" rel="noopener">
         <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
       </a>
@@ -857,11 +968,11 @@ og_url: "https://citizenpass.us"
     </p>
 
     <div class="screenshot-tabs">
-      <button class="screenshot-tab active" onclick="switchScreenshots('iphone')">
+      <button class="screenshot-tab active" onclick="switchScreenshots('iphone', event)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="1" width="14" height="22" rx="3"/><line x1="12" y1="18" x2="12" y2="18.01" stroke-width="3" stroke-linecap="round"/></svg>
         iPhone
       </button>
-      <button class="screenshot-tab" onclick="switchScreenshots('android')">
+      <button class="screenshot-tab" onclick="switchScreenshots('android', event)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="8" y1="19" x2="16" y2="19" stroke-linecap="round"/></svg>
         Android
       </button>
@@ -869,14 +980,6 @@ og_url: "https://citizenpass.us"
 
     <!-- iPhone Screenshots -->
     <div class="screenshot-gallery active" id="iphone-screenshots">
-      <!--
-        ============================================================
-        TO ADD iPHONE SCREENSHOTS:
-        1. Add your screenshot images to the website repo
-        2. Name them: iphone-1.png, iphone-2.png, etc.
-        3. Uncomment the img tags below and update the src paths
-        ============================================================
-      -->
       <div class="screenshot-item">
         <img src="screenshots/iphone/iphone-1.png" alt="Home Screen" onerror="this.parentElement.innerHTML='<div class=screenshot-placeholder-item>iPhone Screenshot 1<br>Home Screen</div>'">
         <p class="screenshot-caption">Home Screen</p>
@@ -1015,7 +1118,7 @@ og_url: "https://citizenpass.us"
     </div>
   </section>
 
-  <!-- TUTORIAL VIDEOS (placeholder for YouTube links) -->
+  <!-- TUTORIAL VIDEOS -->
   <section class="videos" id="videos">
     <p class="section-label">Learn How To Use It</p>
     <h2 class="section-title">Tutorial Videos</h2>
@@ -1024,26 +1127,23 @@ og_url: "https://citizenpass.us"
     </p>
     <div class="video-grid">
       <div class="video-card">
-  <div class="video-icon">🎬</div>
-  <h4 class="video-title">Getting Started</h4>
-  <p class="video-desc">Complete app walkthrough — download, set up your state, and start studying.</p>
-  
-  <!-- YouTube Embed -->
-  <div style="margin: 16px 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--white-08);">
-    <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-      <iframe 
-        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-        src="https://www.youtube.com/embed/XiCMLhjdhSA" 
-        title="Citizen Pass App Introduction" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  
-  <a href="https://www.youtube.com/watch?v=XiCMLhjdhSA" class="video-link" target="_blank">Watch on YouTube →</a>
-</div>>
+        <div class="video-icon">🎬</div>
+        <h4 class="video-title">Getting Started</h4>
+        <p class="video-desc">Complete app walkthrough — download, set up your state, and start studying.</p>
+        <div style="margin: 16px 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--white-08);">
+          <div style="position: relative; padding-bottom: 56.25%; height: 0;">
+            <iframe
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+              src="https://www.youtube.com/embed/XiCMLhjdhSA"
+              title="Citizen Pass App Introduction"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+        <a href="https://www.youtube.com/watch?v=XiCMLhjdhSA" class="video-link" target="_blank">Watch on YouTube →</a>
+      </div>
       <div class="video-card">
         <div class="video-icon">📚</div>
         <h4 class="video-title">Civics Study Guide</h4>
@@ -1051,26 +1151,23 @@ og_url: "https://citizenpass.us"
         <span class="video-link" style="opacity:0.5;">Coming Soon</span>
       </div>
       <div class="video-card">
-  <div class="video-icon">🎤</div>
-  <h4 class="video-title">Mock Interview Guide</h4>
-  <p class="video-desc">How to set up and take the full mock interview — MC and text entry modes explained.</p>
-  
-  <!-- YouTube Embed -->
-  <div style="margin: 16px 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--white-08);">
-    <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-      <iframe 
-        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-        src="https://www.youtube.com/embed/qL9QukfdT3k" 
-        title="Citizen Pass Mock Interview Tutorial Part 1" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  
-  <a href="https://www.youtube.com/watch?v=qL9QukfdT3k" class="video-link" target="_blank">Watch on YouTube →</a>
-</div>
+        <div class="video-icon">🎤</div>
+        <h4 class="video-title">Mock Interview Guide</h4>
+        <p class="video-desc">How to set up and take the full mock interview — MC and text entry modes explained.</p>
+        <div style="margin: 16px 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--white-08);">
+          <div style="position: relative; padding-bottom: 56.25%; height: 0;">
+            <iframe
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+              src="https://www.youtube.com/embed/qL9QukfdT3k"
+              title="Citizen Pass Mock Interview Tutorial Part 1"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+        <a href="https://www.youtube.com/watch?v=qL9QukfdT3k" class="video-link" target="_blank">Watch on YouTube →</a>
+      </div>
     </div>
   </section>
 
@@ -1124,13 +1221,6 @@ og_url: "https://citizenpass.us"
       </ul>
     </div>
     <div class="footer-counter">
-      <!-- 
-        VISITOR COUNTER SETUP:
-        1. Go to https://www.goatcounter.com and sign up (free)
-        2. Choose a site code like "citizenpass"
-        3. Replace YOUR_SITE_CODE below with your actual code
-        4. The counter will show total page views
-      -->
       <noscript>
         <img src="https://YOUR_SITE_CODE.goatcounter.com/count?p=/&t=Citizen+Pass" alt="">
       </noscript>
@@ -1138,43 +1228,62 @@ og_url: "https://citizenpass.us"
     </div>
   </footer>
 
-  <!-- Screenshot Tab Switching -->
+  <!-- ========== SCRIPTS ========== -->
   <script>
-    function switchScreenshots(platform) {
-      // Update tabs
-      document.querySelectorAll('.screenshot-tab').forEach(tab => tab.classList.remove('active'));
-      event.currentTarget.classList.add('active');
+    /* --- Hamburger / Mobile Drawer --- */
+    function toggleDrawer() {
+      var drawer = document.getElementById('mobileDrawer');
+      var btn    = document.getElementById('hamburgerBtn');
+      var isOpen = drawer.classList.contains('open');
+      if (isOpen) {
+        drawer.classList.remove('open');
+        btn.classList.remove('open');
+        btn.setAttribute('aria-label', 'Open menu');
+      } else {
+        drawer.classList.add('open');
+        btn.classList.add('open');
+        btn.setAttribute('aria-label', 'Close menu');
+      }
+    }
 
-      // Update galleries
-      document.querySelectorAll('.screenshot-gallery').forEach(g => g.classList.remove('active'));
+    function closeDrawer() {
+      var drawer = document.getElementById('mobileDrawer');
+      var btn    = document.getElementById('hamburgerBtn');
+      drawer.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-label', 'Open menu');
+    }
+
+    /* Close drawer on outside tap */
+    document.addEventListener('click', function(e) {
+      var drawer = document.getElementById('mobileDrawer');
+      var btn    = document.getElementById('hamburgerBtn');
+      if (drawer.classList.contains('open') &&
+          !drawer.contains(e.target) &&
+          !btn.contains(e.target)) {
+        closeDrawer();
+      }
+    });
+
+    /* --- Screenshot Tab Switching (fixed: passes event explicitly) --- */
+    function switchScreenshots(platform, e) {
+      var evt = e || event;
+      document.querySelectorAll('.screenshot-tab').forEach(function(tab) {
+        tab.classList.remove('active');
+      });
+      evt.currentTarget.classList.add('active');
+      document.querySelectorAll('.screenshot-gallery').forEach(function(g) {
+        g.classList.remove('active');
+      });
       document.getElementById(platform + '-screenshots').classList.add('active');
     }
   </script>
 
   <!--
     GOATCOUNTER ANALYTICS:
-    1. Sign up at https://www.goatcounter.com (free, no credit card)
-    2. Replace YOUR_SITE_CODE below with your code (e.g., "citizenpass")
-    3. Dashboard will be at https://YOUR_SITE_CODE.goatcounter.com
+    Replace YOUR_SITE_CODE with your actual code (e.g., "citizenpass")
   -->
   <!-- <script data-goatcounter="https://YOUR_SITE_CODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script> -->
-
-  <!--
-    VISITOR COUNTER DISPLAY:
-    Once Goatcounter is set up, uncomment and update this script:
-  -->
-  <!--
-  <script>
-    fetch('https://YOUR_SITE_CODE.goatcounter.com/counter//.json')
-      .then(r => r.json())
-      .then(data => {
-        document.getElementById('visitor-count').textContent = data.count.toLocaleString();
-      })
-      .catch(() => {
-        document.getElementById('visitor-count').textContent = '—';
-      });
-  </script>
-  -->
 
 </body>
 </html>
