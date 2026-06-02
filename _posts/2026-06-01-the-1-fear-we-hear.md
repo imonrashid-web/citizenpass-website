@@ -3,7 +3,7 @@ layout: post
 title: "The #1 fear we hear: “What if I don’t understand the officer?”"
 url_slug: "The #1 fear we hear"
 date: 2026-06-01
-category: announcement
+category: n400
 excerpt: |
   The #1 fear we hear: “What if I don’t understand the officer?”
   Good news: you have options. Better news: officers expect this.
