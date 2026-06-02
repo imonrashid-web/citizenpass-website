@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Demystifying the 1-out-of-3 Reading Rule
+title: Demystifying the N-400 1-out-of-3 Reading Rule
 url_slug: Demystifying the 1-out-of-3 Reading Rule
 date: 2026-06-02
 category: n400
