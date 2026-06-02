@@ -3,7 +3,7 @@ layout: post
 title: "N-400 Official Vocabulary Focus: People & Civics"
 url_slug: N-400 Official Vocabulary Focus
 date: 2026-06-02
-category: announcement
+category: n400
 excerpt: To ace the N-400 reading test, you need to familiarize yourself with
   the exact words the USCIS uses. The test is completely predictable because the
   vocabulary list is public!
