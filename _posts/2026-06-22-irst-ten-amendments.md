@@ -1,30 +1,29 @@
 ---
-layout: post
-title: "The Bill of Rights: Civics 2025"
-url_slug: irst-ten-amendments
+title: "La Declaración de Derechos: Civismo 2025"
+url_slug: primeras-diez-enmiendas
 date: 2026-06-22
 category: civics
-excerpt: Master the exact terminology for the first ten amendments to the
-  Constitution to secure your point on the test.
+excerpt: Asegure su punto en el examen de civismo dominando el término oficial
+  para las primeras diez enmiendas constitucionales.
 ---
-What do we call the first ten amendments to the Constitution? 🇺🇸
+Esta pregunta evalúa su conocimiento sobre las libertades fundamentales en los EE. UU.
 
-This question tests your knowledge of foundational American liberties.
+Secreto de preparación: La respuesta oficial es absoluta: La Declaración de Derechos ("The Bill of Rights"). Debe pronunciar esta frase exacta en inglés.
 
-The insider secret tip: The answer is historically absolute—The Bill of Rights. You must state this exact phrase.
+Ejemplo práctico: Si responde únicamente "los derechos básicos" o "las enmiendas", el oficial no podrá tomar su respuesta como válida. Practicar la pronunciación de "Bill of Rights" le dará un punto seguro.
 
-Practical example scenario: If an officer asks this and you answer "the basic rights" or "the amendments," it will not be accepted. Practicing the transition ensures you never stumble.
+Citizen Pass cuenta con herramientas nativas de audio para que entrene su oído y su voz perfectamente.
 
-Citizen Pass features native text-to-speech simulations so your ear becomes completely attuned to these official question audio cues.
+🏆 La ÚNICA aplicación que simula una entrevista completa de ciudadanía — Civismo, Lectura, Escritura y N-400 — todo en un solo lugar.  
 
-🏆 The ONLY app that simulates a complete citizenship interview — Civics, Reading, Writing, and N-400 — all in one place.  
 
-https://Citizenpass.us
+
+[https://Citizenpass.us](https://citizenpass.us/)
 
 seven day free trial with no Ad ever
 
-App Store: ‎‎https://apps.apple.com/us/app/citizen-pass-citizenship-prep/id6760327120
+App Store: ‎‎<https://apps.apple.com/us/app/citizen-pass-citizenship-prep/id6760327120>
 
-Google Play: https://play.google.com/store/apps/details?id=com.passmyinterview.app&utm_source=na_Med
+Google Play: [https://play.google.com/store/apps/details?id=com.passmyinterview.app&utm_source=na_Med](https://www.google.com/search?q=https://play.google.com/store/apps/details%3Fid%3Dcom.passmyinterview.app%26utm_source%3Dna_Med)
 
-#CitizenshipHacks #USCISInterview #N400Prep #LearnEnglish #N-400
+\#CitizenshipHacks #USCISInterview #N400Prep #LearnEnglish #N-400
