@@ -38,6 +38,7 @@ collections:
     summary: "{{title}}"
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     preview_path: "blog/{{slug}}"
+    sort: "date:desc"
     editor:
       preview: false
     fields:
