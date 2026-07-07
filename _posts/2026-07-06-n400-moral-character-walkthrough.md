@@ -1,10 +1,10 @@
 ---
-layout: post
-title: What's Actually in the N-400 Moral Character Review
-url_slug: n400-moral-character-walkthrough
+title: Lo que realmente incluye la revisión de Carácter Moral del N-400
+url_slug: "\tn400-caracter-moral"
 date: 2026-07-06
 category: n400
-excerpt: The N-400 interview includes a Moral Character review — Citizen Pass
-  now walks you through all of these questions so nothing catches you off guard.
+excerpt: La entrevista del N-400 incluye una revisión de Carácter Moral —
+  Citizen Pass ahora te guía a través de todas estas preguntas para que nada te
+  tome por sorpresa.
 ---
-Did you know your N-400 interview includes a Moral Character review? It's a series of yes/no questions officers ask to confirm your eligibility, and it's just as important as the Civics, Reading, and Writing portions. Citizen Pass now walks you through all of these questions ahead of time, so you can prepare for the whole interview, not just the parts everyone talks about.
+¿Sabías que tu entrevista del N-400 incluye una revisión de Carácter Moral? Es una serie de preguntas de sí/no que los oficiales hacen para confirmar tu elegibilidad, y es tan importante como las secciones de Cívica, Lectura y Escritura. Citizen Pass ahora te guía a través de todas estas preguntas de antemano, para que puedas prepararte para toda la entrevista, no solo para las partes de las que todos hablan.
